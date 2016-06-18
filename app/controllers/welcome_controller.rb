@@ -18,7 +18,7 @@ class WelcomeController < ApplicationController
 
   def favorite_action
   	post = params[:post]
-  	Post.create(:reddit_id => post[:reddit_id], :title => post[:title], :web_url => post[:web_url], :img_url => post[:img_url], :user_id => current_user.id )
+  	Post.create(:reddit_id => post[:reddit_id], :title => post[:title], :web_url => post[:web_url], :img_url => post[:img_url], :user_id => current_user.id, :num_comments => post[:num_comments] )
   	render :json => {status: 200}
   end
 
