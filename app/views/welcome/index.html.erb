@@ -1,14 +1,3 @@
 <h1>Trending Reddit Posts</h1>
 
-<ul class="list-group">
-  <% @posts.each do |post| %>
-	  <a href="<%=post.web_url%>" class="list-group-item">
-	    <div class="media-body">
-		    <% if post.img_url %>
-			      <img class="media-object" src="<%=post.img_url%>">
-			  <%end%>
-	      <span class="media-heading"><%= post.title %></span>
-	    </div>
-	  </a>
-	<%end%>
-</ul>
+<%= render partial: 'post_list' %>

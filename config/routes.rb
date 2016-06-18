@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get 'favs' => 'welcome#favs'
+  post 'favorite' => 'welcome#favorite_action'
+  post 'unfavorite' => 'welcome#unfavorite_action'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
