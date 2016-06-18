@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160618165010) do
+ActiveRecord::Schema.define(version: 20160618192512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20160618165010) do
     t.integer  "user_id"
     t.string   "reddit_id"
   end
+
+  add_index "posts", ["user_id"], name: "post_user_id_ix", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
