@@ -8,11 +8,11 @@
 	      <div class="media-heading">
 	      	<div>
 		      	<% if (@current_user_fav_post_ids && @current_user_fav_post_ids.include?(post.reddit_id)) %>
-		      		<a onclick="star(this,<%=post.to_json%>)" class="glyphicon glyphicon-star"></a>
+		      		<a href onclick="star(this,<%=post.to_json%>)" class="glyphicon glyphicon-star"></a>
 		      	<%else%>
-		      		<a onclick="star(this,<%=post.to_json%>)" class="glyphicon glyphicon-star-empty"></a>
+		      		<a href onclick="star(this,<%=post.to_json%>)" class="glyphicon glyphicon-star-empty"></a>
 		      	<%end%>
-		      	<%= post.title %> <a class="button" href="<%=post.web_url%>">(Link)</a>
+		      	<%= post.title %> (<%= post.num_comments%>) <a class="button" href="<%=post.web_url%>">Link</a>
 	      	</div>
 	      </div>
 	    </div>

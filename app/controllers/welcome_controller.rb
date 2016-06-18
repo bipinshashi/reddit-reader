@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
   	@current_user_fav_post_ids = current_user.favorited_posts.collect(&:reddit_id) if current_user  		
   	response['data']['children'].each do |c| 
   		img_url = (c['data']['thumbnail'] =~ URI::regexp) ? c['data']['thumbnail'] : nil
-  		@posts << Post.new(:reddit_id => c['data']['id'], :title => c['data']['title'], :web_url => c['data']['url'], :img_url => img_url)
+  		@posts << Post.new(:reddit_id => c['data']['id'], :title => c['data']['title'], :web_url => c['data']['url'], :img_url => img_url, :num_comments => c['data']['num_comments'])
   	end
   end
 
