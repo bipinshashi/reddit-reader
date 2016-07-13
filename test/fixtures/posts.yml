@@ -4,8 +4,12 @@ one:
   title: MyString
   web_url: MyString
   img_url: MyString
+  user_id: 1
+  reddit_id: 1
 
 two:
   title: MyString
   web_url: MyString
   img_url: MyString
+  user_id: 1
+  reddit_id: 2

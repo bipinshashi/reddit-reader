@@ -23,7 +23,7 @@ class WelcomeController < ApplicationController
   end
 
   def unfavorite_action
-  	post = Post.where(:user_id => current_user.id, :reddit_id => params[:post][:reddit_id]).last
+  	post = Post.where(:user_id => current_user.id, :reddit_id => params[:post][:reddit_id].to_i).last
   	post.destroy
   	render :json => {status: 200}
   end
